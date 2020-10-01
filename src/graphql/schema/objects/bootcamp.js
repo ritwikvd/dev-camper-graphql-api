@@ -1,8 +1,6 @@
-const { gql } = require("apollo-server");
+const { gql } = require("apollo-server-express");
 
 module.exports = gql`
-	union Object = Bootcamp | Course | Review
-
 	type PagObject {
 		page: Int
 		limit: Int
