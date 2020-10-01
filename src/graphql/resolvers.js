@@ -1,4 +1,4 @@
-const api = require("./api");
+const api = require("../api");
 
 const wrap = f => (_, args, { auth }) => f(args, auth);
 
