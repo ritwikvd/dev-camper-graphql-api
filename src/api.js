@@ -5,8 +5,9 @@ const instance = axios.create({
 });
 
 const helper = async (method, url, authorization, data) => {
-	const arr = [data, { headers: { authorization } }];
-	method === "get" ? arr.shift() : null;
+	const config = { headers: { authorization } };
+
+	const arr = method === "get" ? [config] : [data, config];
 
 	const { data: result } = await instance[method](url, ...arr);
 	return result;
